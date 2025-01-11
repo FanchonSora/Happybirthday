@@ -1,0 +1,19 @@
+.greeting-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f4037, #99f2c8); /* Gradient background */
+    overflow: hidden;
+  }
+  
+  canvas {
+    display: block;
+    /* Make canvas cover the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  

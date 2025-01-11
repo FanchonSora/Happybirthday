@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.birthday-card {
+  background: white;
+  border: 5px solid #ff7f50;
+  border-radius: 20px;
+  padding: 5vw 4vw; /* Adjust padding to scale with viewport size */
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.6s, box-shadow 0.6s;
+  position: relative;
+  width: 80vw; /* Set card width as a percentage of the viewport width */
+  height: 80vh; /* Set card height as a percentage of the viewport height */
+  max-width: 600px; /* Maximum width for large screens */
+  max-height: 600px; /* Maximum height for large screens */
+  perspective: 1000px;
+}
+
+.birthday-card.flip {
+  transform: rotateY(180deg);
+}
+
+.birthday-card .front,
+.birthday-card .back {
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.birthday-card .back {
+  transform: rotateY(180deg);
+}
+
+.birthday-card .back h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
+  color: #32cd32;
+  margin-bottom: 20px;
+}
+
+.birthday-card .back p {
+  font-family: 'Pacifico', cursive;
+  font-size: 18px;
+  color: #3cb371;
+}
+
+/* Front Side */
+.birthday-card .front .decorations {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  display: flex;
+  gap: 10px;
+}
+
+.birthday-card .front .decorations i {
+  font-size: 24px;
+  color: #ff69b4;
+  animation: float 3s ease-in-out infinite;
+}
+
+.birthday-card .front h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 6vw; /* Scaled font size */
+  color: #ff4500;
+  margin-bottom: 20px;
+}
+
+.birthday-card .front p {
+  font-family: 'Pacifico', cursive;
+  font-size: 3vw; /* Scaled font size */
+  color: #ff6347;
+  margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.birthday-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
