@@ -16,8 +16,7 @@ const NameForm: React.FC = () => {
     <div className="nameform-container">
       <div className="first--slide">
         <div className="slide--content">
-          <h1>Chào mừng đến với</h1>
-          <h2>Thiệp Sinh Nhật</h2>
+          <h1>HAPPY BIRTHDAY</h1>
           {/* Các phần tử trang trí */}
           <span className="top"></span>
           <span className="right"></span>
@@ -26,7 +25,7 @@ const NameForm: React.FC = () => {
         </div>
 
         <div className="slide--content--one">
-          <h1 className="first">Chọn tên bạn muốn chúc mừng</h1>
+          <h1 className="first">CHỌN TÊN CỦA BẠN</h1>
           <div className="circle--stuff">
             {/* SVG từ mẫu HTML hoặc các SVG động khác */}
             <svg
