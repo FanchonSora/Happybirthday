@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+
+.nameform-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Gradient xanh biển */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.first--slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Thêm các hiệu ứng nền hoặc animation nếu cần */
+}
+
+.slide--content {
+  text-align: center;
+  color: #1e90ff; /* Màu xanh biển */
+  font-family: 'Dancing Script', cursive;
+  z-index: 2;
+}
+
+.slide--content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.slide--content h2 {
+  font-size: 2rem;
+}
+
+.slide--content--one {
+  text-align: center;
+  color: #00bfff; /* Màu xanh dương sáng */
+  font-family: 'Pacifico', cursive;
+  z-index: 2;
+  margin-top: 2rem;
+}
+
+.slide--content--one h1.first {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.circle--stuff {
+  margin-top: 1rem;
+  /* Tùy chỉnh SVG nếu cần */
+}
+
+.name-options {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+}
+
+.name-button {
+  background-color: #1e90ff; /* Màu xanh biển */
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Pacifico', cursive;
+}
+
+.name-button:hover {
+  background-color: #00bfff; /* Màu xanh dương sáng */
+}
+
+/* Các phần tử trang trí (ví dụ: các span) */
+span.top,
+span.right,
+span.bottom,
+span.left {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+span.top {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+span.right {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+span.bottom {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+span.left {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.2);
+  }
+}
+
+/* Thêm các icon bổ sung */
+.additional-icons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+.additional-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .slide--content h1,
+  .slide--content--one h1,
+  .slide--content--one h2 {
+    font-size: 1.5rem;
+  }
+
+  .name-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .additional-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

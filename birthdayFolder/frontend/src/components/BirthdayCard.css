@@ -1,35 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+/* src/components/BirthdayCard.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&display=swap');
 
 .card-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Gradient xanh biển */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
 }
 
 .birthday-card {
-  background: white;
-  border: 5px solid #ff7f50;
+  background: rgba(255, 255, 255, 0.9);
+  border: 5px solid #1e90ff; /* Màu xanh biển */
   border-radius: 20px;
-  padding: 5vw 4vw; /* Adjust padding to scale with viewport size */
+  padding: 5vw 4vw;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.6s, box-shadow 0.6s;
   position: relative;
-  width: 80vw; /* Set card width as a percentage of the viewport width */
-  height: 80vh; /* Set card height as a percentage of the viewport height */
-  max-width: 600px; /* Maximum width for large screens */
-  max-height: 600px; /* Maximum height for large screens */
+  width: 80vw;
+  height: 80vh;
+  max-width: 600px;
+  max-height: 600px;
   perspective: 1000px;
-}
-
-.birthday-card.flip {
-  transform: rotateY(180deg);
 }
 
 .birthday-card .front,
@@ -41,68 +39,103 @@
   left: 0;
   width: 100%;
   height: 100%;
+  font-family: 'Pacifico', cursive;
 }
 
 .birthday-card .back {
   transform: rotateY(180deg);
 }
 
-.birthday-card .back h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 36px;
-  color: #32cd32;
-  margin-bottom: 20px;
+.birthday-card .front {
+  color: #1e90ff; /* Màu xanh biển */
 }
 
-.birthday-card .back p {
-  font-family: 'Pacifico', cursive;
-  font-size: 18px;
-  color: #3cb371;
-}
-
-/* Front Side */
-.birthday-card .front .decorations {
+.birthday-card .front .decorations,
+.birthday-card .back .back-decorations {
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 10px;
+  left: 10px;
   display: flex;
   gap: 10px;
 }
 
-.birthday-card .front .decorations i {
-  font-size: 24px;
-  color: #ff69b4;
-  animation: float 3s ease-in-out infinite;
+.birthday-card .front .decorations .decoration-icon,
+.birthday-card .back .back-decorations .back-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .birthday-card .front h1 {
   font-family: 'Dancing Script', cursive;
-  font-size: 6vw; /* Scaled font size */
-  color: #ff4500;
+  font-size: 3rem;
+  color: #1e90ff; /* Màu xanh biển */
   margin-bottom: 20px;
 }
 
 .birthday-card .front p {
   font-family: 'Pacifico', cursive;
-  font-size: 3vw; /* Scaled font size */
-  color: #ff6347;
+  font-size: 1.5rem;
+  color: #00bfff; /* Màu xanh dương sáng */
   margin-bottom: 30px;
 }
 
-/* Animations */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.birthday-card .back h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #1e90ff; /* Màu xanh biển */
+  margin-bottom: 20px;
 }
 
+.birthday-card .back p {
+  font-family: 'Pacifico', cursive;
+  font-size: 1rem;
+  color: #00bfff; /* Màu xanh dương sáng */
+  margin-bottom: 20px;
+}
+
+.background-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Hover effect để lật thẻ nếu muốn */
 .birthday-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .birthday-card .front h1 {
+    font-size: 2rem;
+  }
+
+  .birthday-card .front p {
+    font-size: 1rem;
+  }
+
+  .birthday-card .back h2 {
+    font-size: 1.5rem;
+  }
+
+  .birthday-card .back p {
+    font-size: 0.9rem;
+  }
+
+  .birthday-card {
+    width: 90vw;
+    height: 90vh;
+    padding: 4vw 3vw;
+  }
+
+  .birthday-card .front .decorations .decoration-icon,
+  .birthday-card .back .back-decorations .back-icon {
+    width: 30px;
+    height: 30px;
+  }
 }
